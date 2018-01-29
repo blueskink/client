@@ -3571,6 +3571,8 @@ export type TeamInvitee = $ReadOnly<{inviteID: TeamInviteID, uid: UID, eldestSeq
 
 export type TeamJoinRequest = $ReadOnly<{name: String, username: String}>
 
+export type TeamKBFSKeyRefresher = $ReadOnly<{generation: Int, appType: TeamApplication}>
+
 export type TeamLegacyTLFUpgradeChainInfo = $ReadOnly<{keysetHash: TeamEncryptedKBFSKeysetHash, teamGeneration: PerTeamKeyGeneration, legacyGeneration: Int, appType: TeamApplication}>
 
 export type TeamList = $ReadOnly<{teams?: ?Array<MemberInfo>}>
@@ -3599,7 +3601,7 @@ export type TeamOperation = $ReadOnly<{manageMembers: Boolean, manageSubteams: B
 
 export type TeamPlusApplicationKeys = $ReadOnly<{id: TeamID, name: String, implicit: Boolean, public: Boolean, application: TeamApplication, writers?: ?Array<UserVersion>, onlyReaders?: ?Array<UserVersion>, applicationKeys?: ?Array<TeamApplicationKey>}>
 
-export type TeamRefreshers = $ReadOnly<{needKeyGeneration: PerTeamKeyGeneration, wantMembers?: ?Array<UserVersion>, wantMembersRole: TeamRole}>
+export type TeamRefreshers = $ReadOnly<{needKeyGeneration: PerTeamKeyGeneration, wantMembers?: ?Array<UserVersion>, wantMembersRole: TeamRole, needKBFSKeyGeneration: TeamKBFSKeyRefresher}>
 
 export type TeamRequestAccessResult = $ReadOnly<{open: Boolean}>
 
